@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dishaaree Pottery Workshop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lupines&family=Botanical&family=Balmy+Morning&family=Earth+Tone&display=swap&family=Playwrite+GB+S" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+    <style>
+
+
+        /* Body Styles */
+
+        body {
+            font-family: 'Playwrite GB S', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color:#DBDCDD;
+            color: #515151;
+        }
+        .container-fluid {
+            margin: 0px;
+            padding: 0px;
+}
+
+        /* Navbar Styles */
+
+        .navbar {
+            background-color: #2D342E;
+            padding: 14px;
+            color: white;
+            font-family: 'Playwrite GB S', sans-serif;
+            margin: 0px;
+            border-bottom: 3px solid black;
+            border-radius: 0px;
+            display: flex;
+        }
+
+        .navbar a {
+            color: #FEFAE0;
+            margin-right: 15px;
+            text-decoration: none;
+            font-family: 'Playwrite GB S', sans-serif;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* DropDown Style */
+
+        .dropdown {
+            position: relative;
+        }
+
+
+        .dropdown-toggle {
+            cursor: pointer;
+            text-decoration: none;
+            color: #283618; }
+
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: 373D20;
+            display: none;
+            list-style: none;
+            padding: 10px 0;
+            margin: 0;
+            border-radius: 4px;
+            min-width: 160px;
+            z-index: 1000;
+         }
+
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+         }
+
+
+        .dropdown-menu li {
+           padding: 8px 10px;
+         }
+
+        .dropdown-menu li a {
+            text-decoration: none;
+            color: #2D342E; 
+         }
+
+        .dropdown-menu li a:hover {
+            background-color: #a6592f;
+            color: #283618;
+
+         }
+
+        /* Jumbotron Styles */
+
+        .jumbotron {
+            background-color: #466245;
+            color: #E4A5A1;
+            padding: 30px 0px;              text-align: center;
+            font-family: 'Botanical', cursive;
+            font-size: 30px;
+            position: relative;
+            margin-top: 0px !important; margin-bottom: 0px !important;
+            border-bottom: 0px solid transparent;
+            position: relative;
+    height: 60vh; /* Adjust height as needed; vh units keep it responsive */
+    min-height: 300px; /* Optional minimum height for smaller screens */
+    background-image: url('your-hero-image.jpeg'); /* Replace with your image path */
+    background-size: cover; /* Ensures the image covers the jumbotron without stretching */
+    background-position: center; /* Centers the image within the jumbotron */
+    background-attachment: fixed; /* Optional: creates a parallax effect */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+        }
+
+.jumbotron-content {
+    position: relative;
+    z-index: 2;
+}
+.jumbotron::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Adjust for overlay opacity */
+    z-index: 1;
+}
+
+
+       /*Section Header Jumbotron Styles */
+
+     .section-header-jumbotron {
+        background-color: #2D342E;
+        padding: 4px;
+        font-family: 'Botanical', cursive;
+        margin-top: 0px;
+        width: 100%;
+        color: #EFF1ED;
+text-align: center;
+        }
+        
+
+
+        /* Dishaaree Title */
+
+        #disharee {
+            font-family: 'Botanical', cursive;
+            color: #DBDCDD;
+            font-size: 50px;
+            padding: 0px;
+            margin-bottom: 14.7px;
+        }
+
+@media (max-width: 768px) {
+.jumbotron {
+height: auto;
+       }
+}
+
+
+        /* Floral Icons */
+
+        .floral-icons {
+            display: flex;
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .floral-left, .floral-right {
+            display: flex;
+            justify-content: space-between;
+            width: 50%;
+        }
+
+        .floral-left img, .floral-right img {
+            height: 55px;  /* Flower size */
+            width: auto;
+            margin-right: 5px;  /* Reduced gap between flowers */
+        }
+
+        .floral-left {
+            justify-content: flex-start;
+            padding-right: 40px;  
+        }
+
+        .floral-right {
+            justify-content: flex-end;
+            padding-left: 40px;          
+        }
+
+}
+        /* Titles */
+        h1, h2, h3 {
+            font-family: 'Botanical', cursive;
+        }
+
+
+        /* Section Styles */
+
+        section {
+            padding: 0px 0;
+            border-top: 0px solid #ddd;
+        }
+       
+#classes {
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+margin-bottom: 20px;
+}
+
+
+       /* Individual Class Card Styling */
+.class-card {
+    background-color: #f5f5f5; /* Light background for each card */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 0px;
+    width: 100%;
+    max-width: 600px; /* Set max-width for individual cards */
+    text-align: center;
+height: 188px;
+ position: relative;
+}
+
+.class-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2); /* White overlay */
+    border-radius: 8px;
+    z-index: 1;
+}
+.class-card:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
+}
+
+/* Styling for content within each card */
+.card-content h3 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 1.7em;
+}
+
+.card-content p {
+    font-size: 1.5em;
+    color: #666;
+}
+
+.card-content .fee {
+    font-weight: bold;
+    color: #c27c2c; /* Accent color for the fee */
+}
+
+
+      /* History Card */
+.history-card {
+    background-color: #2D342E;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 100%;
+    margin: 0 auto;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.history-card:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
+}
+
+
+/* Two-Column Layout */
+
+.history-section h2 {
+    text-align: center;
+    font-size: 3.2em;
+    color: #606C38;
+    margin-bottom: 20px;
+}
+
+.history-card h3 {
+    font-size: 3.2em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.history-card p {
+    line-height: 2em;
+    color: #555;
+font-size: 1.5em;
+}
+
+.history-card {
+ position: relative; /* Needed for absolute positioning of the overlay */
+  overflow: hidden;
+background-color: #DBDCDD;
+}
+
+.history-card-content {
+  position: relative;
+}
+
+.history-image-overlay {
+  position: absolute; /* Positioned on top of the text */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Keep it above the text */
+  width: 100%;
+  height: 100%;
+  background-size: contain; /* Ensures the image covers the card area */
+  opacity: 0.6; /* Reduced opacity for overlay effect */
+    background-position: center; /* Centers the image within the jumbotron */
+   /
+}
+
+.history-text {
+  position: relative; /* Ensures the text is above the image overlay */
+  z-index: 2; /* Make sure the text is above the image */
+  font-size: 20px;
+  color: #fff; /* White text to contrast against the overlay image */
+}
+
+
+        .about-container {
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
+           height: 420px;
+           text-align: left;
+         }
+
+        .about-text {
+           margin-right: 17px; margin-left: 17px;
+           width: 50%;
+           font-style: normal !important;
+ line-height: 2em;
+    color: #555;
+font-size: 1.5em;
+         }
+        .about-image {
+           width: 50%;   
+           height: 100%;   
+           object-fit: cover; }
+
+        .about-container {
+           flex-direction: row-reverse;
+           align-items: flex-start;
+           height: auto; 
+        }
+
+@media (max-width: 850px) {
+    .about-container, .history-container {
+        flex-direction: column; 
+        align-items: flex-start;         
+height: auto; 
+    }
+  .about-image, .about-text, .history-image, .history-text {
+        width: 100%; 
+margin: 0px;
+    }
+.about-text {
+padding: 15px;
+}
+
+    .about-image, history-image {
+        height: auto; 
+    }}
+@media (max-width: 1500px) {
+
+.about-text, .history-text{
+font-size: 18px;
+}}
+
+    /* Carousel Styles */
+
+    .carousel-caption {
+       margin-top: 3px;
+       position: static;   
+       padding: 20px; 
+       color: #2D342E; 
+       background-color: #DBDCDD; 
+       border-radius: 5px; 
+       margin-bottom: 3px;
+       font-size: 19px;
+padding: 4px;
+     }
+    .carousel-inner .item img {
+       display: block;
+       height: 450px;
+       width: 100px;
+       margin: 10px auto; 
+       border-radius: 50%; 
+       border: 4px solid #283618;
+       object-fit: cover; 
+      }
+    #myCarousel {
+      width: 100%;     
+      margin: 0 auto; 
+      overflow: hidden; 
+      box shadow: none;
+      height: auto;
+}
+
+ /* Form Styles */
+#register {
+color: #a6592f;
+}
+        form input, form select, form button {
+            padding: 10px;
+            margin: 10px 10px;
+            width: 100%;
+            max-width: 300px;
+            color: #515151;
+        }
+
+        form button {
+            background-color: #c4c4c4;
+            color: #2D342E;
+            border: none;
+            margin-bottom: 30px;
+            font-size: 18px;
+            font-family: 'Playwrite GB S', sans-serif;
+border-radius: 30px;
+padding: 12px;
+        }
+
+        form button:hover {
+            background-color: #a6592f;
+        }
+
+ .input-group {
+            position: relative;
+            width: 255px;
+display: flex;
+align-items: center;
+        }  
+
+ .input-group .caret {
+            position: absolute;
+  margin-right: 5px;
+            right: 10px;
+            transform: translateY(-50%);
+            font-size: 14px;
+            pointer-events: hover; /* Makes caret non-clickable */
+        }
+
+        /* Footer Section */
+        footer {
+            padding: 20px;
+            background-color: #2D342E;
+            color: white;
+            text-align: center;
+            border-top: 2px solid black;
+        }
+
+    </style>
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="#home">Home</a>
+        <a href="#classes">Classes</a>
+<div class="dropdown">
+    <a href="#a" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About <span class="caret"></span></a>
+    <ul class="dropdown-menu">
+        <li><a href="#history">Our Vision</a></li>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#myCarousel">Testimonials</a></li>
+    </ul>
+</div>
+        <a href="#register">Register</a>
+    </div>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="jumbotron"><div class="jumbotron-content">
+            <h1 id="disharee">Dishaaree</h1>
+            <p>From Earth to Art, one pot at a time!</p>
+                    </div></div>
+    </section>
+
+    <!-- Other Sections (Classes, About, Register) -->
+
+
+<section id="history"><div class="section-header-jumbotron">
+  <h2>&nbsp&nbspDiscover the World of Pottery, Here at Dishaaree !</h2><br></div> <div class="history-section"><div class="history-card">
+        <div class="history-content">
+                 <h3>The Origins</h3>
+                <p>Pottery dates back to ancient civilizations, with examples found from as early as 24,000 BC...Pottery is one of the oldest human crafts, dating back over 20,000 years. Initially created for practical purposes like storage and cooking, it evolved into an art form with unique styles across cultures.
+
+In India, pottery has a rich history, with evidence dating back to the Indus Valley Civilization. The Harappan culture’s intricate painted pottery laid the foundation for later traditions. Over time, Indian artisans mastered wheel-throwing, producing both functional and decorative pieces that reflect the country's cultural heritage.
+
+In Bengal, Kumortuli in Kolkata is a renowned center for pottery, known for its clay sculptures and idols made for festivals like Durga Puja. The craft here is deeply spiritual, with artisans connecting with the earth and infusing energy into their creations.</p>
+<h3>Our Mission</h3><p>
+At Dishaaree, we seek to bring this rich history and spirituality to life, offering a space where creativity and tradition come together. Through hands-on classes, we aim to help individuals connect with clay, explore their creativity, and honor timeless pottery practices.We believe in nurturing each participant’s artistic journey, from beginners to seasoned creators, fostering a space of exploration and self-expression. At Dishaaree, we believe every clay creation is a story, every workshop an experience, and every participant a part of our pottery family.</p>
+            
+    </div>
+  </div></div> </div>
+</section>
+
+
+
+    <section id="classes">
+ <div class="section-header-jumbotron">
+        <h2>&nbsp&nbspOur Classes</h2><br></div>
+         <!-- Individual Class Cards -->
+    <div class="class-card">
+        <div class="card-content">
+            <h3>Demo Class</h3><br>
+            <p>1-hour introduction to pottery</p><br>
+            <p class="fee">1000 INR</p>
+        </div>
+    </div>
+
+    <div class="class-card">
+        <div class="card-content">
+            <h3>Couple Session</h3><br>
+            <p>Special 2-hour session for two</p><br>
+            <p class="fee">3000 INR</p>
+        </div>
+    </div>
+
+    <div class="class-card">
+        <div class="card-content">
+            <h3>1 Month Intensive Course</h3><br>
+            <p>15 sessions with a pottery toolkit included</p><br>
+            <p class="fee">16000 INR</p>
+        </div>
+    </div>
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+<section id="about"><div class="section-header-jumbotron">
+  <h2>&nbsp&nbspAbout Disha</h2><br></div>
+  <div class="about-container">
+    
+    <img src="dish5.jpeg" alt="Pottery Image" class="about-image"><div class="about-text">
+     <p> Disha has always had an eye for creativity since childhood. With a degree in Computer Science Engineering, she pursued a technical path but soon realized her true passion lay in something more grounded.</p><p>Leaving behind her job in the tech industry, she decided to follow her heart and take a leap of faith towards her true calling. Embracing the connection to earth and the meditative process of pottery, Disha now brings her love for craftsmanship to life at her brain-child, Dishaaree.</p>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<div class="container-fluid">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+<div class="section-header-jumbotron">
+  <h2>&nbsp&nbspTestimonials</h2><br></div>
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+   <li data-target="#myCarousel" data-slide-to="3"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="pottery1.jpg" alt="pottery1" style="width:500px; length:400px;">
+<div class="carousel-caption">
+          
+          <p>"Dishaaree has changed the way I see pottery! I started as a complete beginner, but the classes were so patient and inspiring. Now, I feel connected to every piece I create. Highly recommend to anyone seeking a creative outlet!"</p>
+<h3>- Anas R.</h3>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="pottery2.jpg" alt="pottery2" style="width:500px; length:400px;"><div class="carousel-caption">
+          <p>"The ambiance at Dishaaree is so calming and welcoming. Pottery became more than just a hobby for me—it’s almost therapeutic. The teachers are passionate and guide you every step of the way. Can't wait to join another workshop!"</p>
+<h3>- Rohan M.</h3>
+        </div>
+      </div>
+    
+      <div class="item">
+        <img src="pottery4.jpg" alt="pottery4" style="width:500px; length:400px;"><div class="carousel-caption">
+          
+          <p>"Disha has such a gift for teaching and a deep passion for pottery. She made each class enjoyable and insightful, giving personal tips that helped me improve so quickly!And the studio itself feels like a peaceful escape!"</p>
+
+   <h3>- Priya K.</h3>   </div></div>
+
+ <div class="item">
+        <img src="pottery3.jpg" alt="pottery5" style="width:500px; length:400px;"><div class="carousel-caption">
+          <p>"I wanted to make something unique for my husband’s birthday. I was nervous at first, but Disha’s patient guidance helped me gain confidence. By the end of the course, I created this beautiful piece that my husband absolutely loves!"</p>
+<h3>-&nbspAshwini&nbspM.</h3>
+        </div>
+      </div>
+ 
+
+
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+    <!-- Register Section -->
+    <section id="register"><div class="section-header-jumbotron">
+        <h2>&nbsp&nbspRegister for a Class Now!</h2><br></div><br>
+        <form>
+            <label for="name">&nbsp&nbsp&nbsp&nbsp&nbsp&nbspFull Name</label><br>
+            <input type="text" id="name"><br><br>
+            <label for="email">&nbsp&nbsp&nbsp&nbsp&nbsp&nbspEmail Address</label><br>
+            <input type="email" id="email"><br><br>
+            <label for="class">&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSelect Class</label>
+ <div class="input-group">
+        <input type="text" id="class" placeholder="Your Class Here" readonly>
+           <div class="dropdown">
+    <a href="#a" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="caret"></span></a>
+    <ul class="dropdown-menu">
+        <li><a href="#dishaaree">Demo Class</a></li>
+        <li><a href="#dishaaree">Couple Session</a></li>
+        <li><a href="#dishaaree">1 Month Intensive Course</a></li>
+    </ul>
+</div></div> <br>
+            <button type="submit">Register Now</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>All Rights Reserved &copy; Dishaaree </p>
+    </footer>
+
+</body>
+</html>
